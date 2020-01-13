@@ -2,10 +2,6 @@ import xml.etree.cElementTree as ET
 import random
 from random import randrange
 import numpy as np
-%pylab inline
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 def create_numbers(save_path,name_of_file,numbers, number_labels,nois_data, maxlength_x=1, maxlength_y=1, digit_sz=(28, 28)):
@@ -65,8 +61,7 @@ def create_numbers(save_path,name_of_file,numbers, number_labels,nois_data, maxl
                     cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
                     #plt.figure(figsize=(1,1))
                     #print(x,y,w,h)
-                    plt.imshow(img, 'gray')
-                    plt.show()
+                    
             #imgplot = plt.imshow(cv2.subtract(255, numbers[n]))
             #plt.show()
             #print(x,y,w,h)
@@ -97,8 +92,7 @@ def create_numbers(save_path,name_of_file,numbers, number_labels,nois_data, maxl
                     cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
                     #plt.figure(figsize=(1,1))
                     #print(x,y,w,h)
-                    plt.imshow(img, 'gray')
-                    plt.show()
+                    
             obj = ET.SubElement(root, "object")
             ET.SubElement(obj, "name").text = "noise"
             bndbox= ET.SubElement(obj, "bndbox")
